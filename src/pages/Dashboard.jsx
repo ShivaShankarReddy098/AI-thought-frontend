@@ -25,7 +25,7 @@ export default function Dashboard() {
   const fetchThoughts = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/thoughts?limit=${LIMIT}&offset=${offset}`
+        `https://ai-thought-backend.vercel.app/thoughts?limit=${LIMIT}&offset=${offset}`
       );
       const sorted = res.data.sort(
         (a, b) => new Date(b.created_at) - new Date(a.created_at)
@@ -40,7 +40,7 @@ export default function Dashboard() {
   const handlePostThought = async () => {
     if (!newThought.trim()) return;
     try {
-      await axios.post("http://localhost:5000/thoughts", {
+      await axios.post("https://ai-thought-backend.vercel.app/thoughts", {
         username,
         content: newThought,
       });
@@ -54,7 +54,7 @@ export default function Dashboard() {
 
   const generateAIThought = async () => {
     try {
-      const res = await fetch("http://localhost:5000/generate-thought");
+      const res = await fetch("https://ai-thought-backend.vercel.app/generate-thought");
       const data = await res.json();
       if (data.thought) {
         const aiRes = {

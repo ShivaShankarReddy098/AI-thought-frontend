@@ -16,7 +16,7 @@ const LoginPage = () => {
   const navigate = useNavigate();
 
   const handleLogin = async () => {
-    const res = await fetch("http://localhost:5000/login", {
+    const res = await fetch("https://ai-thought-backend.vercel.app/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
@@ -93,7 +93,7 @@ const LoginPage = () => {
       <div className="w-full md:w-1/2 bg-gradient-to-br from-black to-gray-900 flex items-center justify-center p-8">
         <div className="text-center px-4 md:px-10">
           <h2 className="text-3xl md:text-6xl font-bold text-[#E0E0E0] leading-tight drop-shadow-[0_0_6px_rgba(255,255,255,0.2)] mb-4">
-          AI Thought
+            AI Thought
           </h2>
 
           <p className="text-lg text-gray-300 mb-2 tracking-wide">

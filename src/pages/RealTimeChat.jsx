@@ -77,15 +77,18 @@ const RealTimeChat = () => {
             msg.receiver === usernameRef.current)
       );
 
-      const response = await fetch("http://localhost:5000/suggest-message", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          from: usernameRef.current,
-          to: selectedUser,
-          previousMessages: filteredMessages,
-        }),
-      });
+      const response = await fetch(
+        "https://ai-thought-backend.vercel.app/suggest-message",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            from: usernameRef.current,
+            to: selectedUser,
+            previousMessages: filteredMessages,
+          }),
+        }
+      );
 
       const data = await response.json();
       console.log(data.suggestion);
@@ -105,7 +108,7 @@ const RealTimeChat = () => {
   const fetchPrivateMessages = useCallback(async (targetUser) => {
     try {
       const response = await fetch(
-        "http://localhost:5000/get-private-messages",
+        "https://ai-thought-backend.vercel.app/get-private-messages",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
