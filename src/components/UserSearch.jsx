@@ -16,7 +16,9 @@ const UserSearch = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const res = await fetch("http://localhost:5000/users-with-thoughts");
+        const res = await fetch(
+          "https://ai-thought-backend.vercel.app/users-with-thoughts"
+        );
         const data = await res.json();
         const sorted = data.sort((a, b) => b.is_online - a.is_online);
         const limited = sorted.slice(0, 10);
