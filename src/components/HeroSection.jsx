@@ -9,7 +9,7 @@ const HeroSection = () => {
           <h1 className="grid text-4xl md:text-6xl font-bold text-[#E0E0E0] leading-tight drop-shadow-[0_0_6px_rgba(255,255,255,0.2)]">
             <span>Think it.</span>
             <span>Feel it.</span>
-            <span>Share it.</span>
+            <span>Share it...</span>
           </h1>
 
           <p className="text-gray-400 text-lg max-w-lg mx-auto md:mx-0 grid">
